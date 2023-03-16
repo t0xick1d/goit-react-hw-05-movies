@@ -21,3 +21,8 @@ export const fetchReviewsMovie = id => {
     `${defaultPath}movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`
   ).then(res => res.json());
 };
+export const fetchSearchMovie = name => {
+  return fetch(
+    `${defaultPath}search/movie?api_key=${KEY}&language=en-US&query=${name}&page=1&include_adult=false`
+  ).then(res => res.json());
+};

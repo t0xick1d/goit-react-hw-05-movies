@@ -11,7 +11,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <h2>Trending today</h2>
+      <h2 style={{ paddingLeft: '40px' }}>Trending today</h2>
       <ul>
         {title.map(e => {
           return (
