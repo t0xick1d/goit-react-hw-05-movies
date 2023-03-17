@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { fetchMovieByid } from 'components/FetchMovies';
+import { Suspense } from 'react';
 
 export default function MovieDetails() {
   const [movie, setMovie] = useState(null);
@@ -61,7 +62,9 @@ export default function MovieDetails() {
             <div>
               <Link to="reviews">Rewiews</Link>
             </div>
-            <Outlet />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Outlet />
+            </Suspense>
           </div>
         </>
       ) : (
